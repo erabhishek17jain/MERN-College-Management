@@ -3,7 +3,7 @@ import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 import { SET_FACULTY, SET_ERRORS, SET_FLAG, SET_ERRORS_HELPER } from '../actionTypes';
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://mern-college-management.onrender.com';
 
 const setFaculty = (data) => {
     return {
@@ -139,7 +139,7 @@ export const facultyUpdate = (updatedData) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: `http://localhost:5000/api/faculty/updateProfile`,
+                url: `${BASE_URL}/api/faculty/updateProfile`,
                 data: updatedData,
             });
             dispatch(facultyUpdateProfileFlag(true));

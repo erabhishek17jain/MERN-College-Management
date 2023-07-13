@@ -5,7 +5,7 @@ import axios from 'axios';
 import HomeHelper from '../Components/HomeHelper';
 import { Link, useHistory } from 'react-router-dom';
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://mern-college-management.onrender.com';
 
 const StudentDetails = () => {
     const store = useSelector((store) => store);

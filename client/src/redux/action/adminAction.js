@@ -3,7 +3,7 @@ import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 import { SET_ADMIN, SET_ERRORS, GET_SUBJECTS } from '../actionTypes';
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://mern-college-management.onrender.com';
 
 const setAdmin = (data) => {
     return {

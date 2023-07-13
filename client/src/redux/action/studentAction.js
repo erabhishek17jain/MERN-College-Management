@@ -3,7 +3,7 @@ import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 import { SET_STUDENT, SET_ERRORS_HELPER, SET_ERRORS, STUDENT_UPDATE_PASSWORD, SET_OTP, SET_FLAG } from '../actionTypes';
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://mern-college-management.onrender.com';
 
 export const setChatHistory = (data) => {
     return {
@@ -199,7 +199,7 @@ export const sendMessage = (room, messageobj) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: `http://localhost:5000/api/student/chat/${room}`,
+                url: `${BASE_URL}/api/student/chat/${room}`,
                 data: messageobj,
             });
         } catch (err) {
@@ -213,7 +213,7 @@ export const getPrivateConversation = (roomId) => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: `http://localhost:5000/api/student/chat/${roomId}`,
+                url: `${BASE_URL}/api/student/chat/${roomId}`,
             });
             dispatch(privateConversation(data.result));
         } catch (err) {
@@ -227,7 +227,7 @@ export const getPrivateConversation2 = (roomId) => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: `http://localhost:5000/api/student/chat/${roomId}`,
+                url: `${BASE_URL}/api/student/chat/${roomId}`,
             });
             dispatch(privateConversation2(data.result));
         } catch (err) {
@@ -241,7 +241,7 @@ export const previousChats = (senderName) => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: `http://localhost:5000/api/student/chat/previousChats/${senderName}`,
+                url: `${BASE_URL}/api/student/chat/previousChats/${senderName}`,
             });
             dispatch(previousChatsHelper(data.result));
         } catch (err) {
@@ -255,7 +255,7 @@ export const newerChats = (receiverName) => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: `http://localhost:5000/api/student/chat/newerChats/${receiverName}`,
+                url: `${BASE_URL}/api/student/chat/newerChats/${receiverName}`,
             });
             dispatch(newerChatsHelper(data.result));
         } catch (err) {
@@ -269,7 +269,7 @@ export const studentUpdate = (updatedData) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: `http://localhost:5000/api/student/updateProfile`,
+                url: `${BASE_URL}/api/student/updateProfile`,
                 data: updatedData,
             });
         } catch (err) {
