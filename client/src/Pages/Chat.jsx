@@ -27,7 +27,7 @@ const Chat = (props) => {
     const [message, setMessage] = useState("")
     const [messageArray, setMessageArray] = useState([])
     const [olderMessages, setOlderMessages] = useState([])
-    const ENDPOINT = 'http://localhost:5000'
+    const ENDPOINT = process.env.BASE_URL + ''
 
     useEffect(() => {
         let temp = props.match.params.room
